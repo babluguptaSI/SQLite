@@ -1,4 +1,4 @@
-1)
+-- 1)
 WITH country_sport_medals AS (
     SELECT 
         a.country_code,
@@ -30,7 +30,7 @@ GROUP BY csm.country_code
 ORDER BY total_sports DESC, total_medals DESC
 LIMIT 10;
 
-2)
+-- 2)
 WITH gender_medals AS (
     SELECT 
         a.country_code,
@@ -75,7 +75,7 @@ GROUP BY ct.country_code, ct.male_medals, ct.female_medals
 ORDER BY (ct.male_medals + ct.female_medals) DESC
 LIMIT 10;
 
-3)
+-- 3)
 WITH athlete_age AS (
     SELECT 
         country_code,
@@ -123,7 +123,7 @@ SELECT *
 FROM with_quartiles
 ORDER BY stddev_age DESC;
 
-4)
+-- 4)
 WITH medalists AS (
     SELECT m.discipline, a.gender, a.height
     FROM medals m
@@ -199,7 +199,7 @@ LEFT JOIN athlete_stats ad USING (discipline)
 ORDER BY d.total_medals DESC;
 
 
-5)
+-- 5)
 WITH country_medal AS (
     SELECT 
         a.country_code,
